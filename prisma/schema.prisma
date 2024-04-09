@@ -15,6 +15,16 @@ model User{
   phone String? @unique
   github_id String? @unique
   avartar String?
-create_at DateTime @default(now())
-updated_at DateTime @updatedAt
+  create_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  SMSToken SMSToken[]
+}
+
+model SMSToken{
+  id Int @id @default(autoincrement())
+  token String @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id])
+  userId Int
 }
