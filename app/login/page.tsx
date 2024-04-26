@@ -18,7 +18,7 @@ export default function Login() {
             <form action={handleForm} className="flex flex-col gap-3">
                 <FormInput name='email' type='email' placeholder='Email' required={true} errors={[]} />
                 <FormInput name='password' type='password' placeholder='Password' required={true} errors={[]} />
-                <FormButton loading={false} text='Create Account' />
+                <FormButton text='Create Account' />
             </form>
             <SocialLogin />
         </div>
